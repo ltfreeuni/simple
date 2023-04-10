@@ -56,5 +56,5 @@ jobs:
           minor-wording: 'MINOR'
           patch-wording:  'feat, fix, style'
           # rc-wording will override the 'preid'
-          target-branch: 'master'
+          target-branch: 'main'
           preid: 'aza-'
