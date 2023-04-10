@@ -46,15 +46,12 @@ jobs:
         with:
           node-version: 16
       - name: Automated Version Bump
-        id: version-bump
         uses: phips28/gh-action-bump-version@master
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           commit-message: 'CI: bumps version to {{version}} [skip ci]'
+          target-branch: 'main'
           major-wording: 'MAJOR'
           minor-wording: 'MINOR'
           patch-wording:  'feat, fix, style'
-          # rc-wording will override the 'preid'
-          target-branch: 'main'
-          preid: 'aza-'
