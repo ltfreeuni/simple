@@ -53,7 +53,7 @@ jobs:
           default: prerelease
           major-wording: 'MAJOR'
           minor-wording: 'MINOR'
+          patch-wording:  'feat, fix, style'
           # rc-wording will override the 'preid'
-          rc-wording: 'alpha, RELEASE, BETA'
           target-branch: 'master'
           preid: 'aza-'
