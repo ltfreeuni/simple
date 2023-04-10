@@ -54,4 +54,3 @@ jobs:
           target-branch: 'main'
           major-wording: 'MAJOR'
           minor-wording: 'MINOR'
-          patch-wording:  'feat, fix, style'
