@@ -1,5 +1,5 @@
 name: Deploy the project
-on: push
+on: [workflow_dispatch, push]
 jobs:
   test:
     runs-on: ubuntu-latest
