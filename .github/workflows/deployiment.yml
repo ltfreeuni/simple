@@ -51,6 +51,5 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           commit-message: 'CI: bumps version to {{version}} [skip ci]'
-          target-branch: 'main'
           major-wording: 'MAJOR'
           minor-wording: 'MINOR'
