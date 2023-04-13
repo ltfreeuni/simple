@@ -38,10 +38,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-          ref: ${{ github.ref }}
+        uses: actions/checkout@v3
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -49,7 +46,7 @@ jobs:
       - name: Automated Version Bump
         uses: phips28/gh-action-bump-version@master
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          aza: ${{ secrets.BYPASS}}
         with:
           commit-message: 'CI: bumps version to {{version}} [skip ci]'
           target-branch: 'main'
