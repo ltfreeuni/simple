@@ -52,5 +52,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AC }}
         with:
           commit-message: 'CI: bumps version to {{version}} [skip ci]'
+          skip-tag:  'true'
           major-wording: 'MAJOR'
           minor-wording: 'MINOR'
