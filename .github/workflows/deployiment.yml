@@ -50,6 +50,7 @@ jobs:
         uses: phips28/gh-action-bump-version@master
         with:
           commit-message: 'CI: bumps version to {{version}} [skip ci]'
-          skip-push:  'true'
+          skip-commit:  'true'
+          skip-tag: 'true'
           major-wording: 'MAJOR'
           minor-wording: 'MINOR'
