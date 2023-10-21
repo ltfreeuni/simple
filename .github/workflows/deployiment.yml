@@ -36,12 +36,14 @@ jobs:
     needs: [test, deploy]
     permissions:
       contents: write
+    environment:
+      name: action playgroud
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          token: ${{ secrets.GH_TOKEN_AC }}
+          token: ${{ secrets.REVIEW_BYPASS }}
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -49,7 +51,7 @@ jobs:
       - name: Automated Version Bump
         uses: phips28/gh-action-bump-version@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AC }}
+          GITHUB_TOKEN: ${{ secrets.REVIEW_BYPASS }}
         with:
           commit-message: 'CI: bumps version to {{version}} [skip ci]'
           skip-tag:  'true'
