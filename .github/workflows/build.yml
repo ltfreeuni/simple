@@ -20,7 +20,7 @@ jobs:
       - name: output Github action event
         run: echo "${{ github.event.action }}"
       - name: output Github action pull request
-        run: echo "${{ github.event.pull_request }}"
+        run: echo "${{ toJSON(github.event.pull_request) }}"
   build:
     needs: test
     runs-on: ubuntu-latest
