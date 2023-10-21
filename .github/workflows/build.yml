@@ -49,10 +49,6 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
       - name: Automated Version Bump
         uses: phips28/gh-action-bump-version@master
         env:
