@@ -1,8 +1,9 @@
 name: Build the project
 on: 
-  merge_group:
-    types:
-      - checks_requested
+  pull_request:
+    branches:
+      - main
+    types: [opened]
 jobs:
   test:
     runs-on: ubuntu-latest
