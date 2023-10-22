@@ -19,8 +19,6 @@ jobs:
         run: npm test
       - name: output Github action event
         run: echo "${{ github.event.action }}"
-      - name: output Github action pull request base ref
-        run: echo "${{ github.event.pull_request.base.ref }}"
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -48,7 +46,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.REVIEW_BYPASS }}
       - name: Automated Version Bump
-        uses: phips28/gh-action-bump-version@master
+        uses: phips28/gh-action-bump-version@v10
         env:
           GITHUB_TOKEN: ${{ secrets.REVIEW_BYPASS }}
         with:
