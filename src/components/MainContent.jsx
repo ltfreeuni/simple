@@ -5,8 +5,11 @@ import HelpArea from './HelpArea';
 function MainContent() {
   const [helpVisible, setHelpVisible] = useState(false);
 
+
+
+
   function toggleHelp() {
-    setHelpVisible((isVisible) => !isVisible);
+    setHelpVisible((isVisible) => !isVisible)
   }
 
   return (
