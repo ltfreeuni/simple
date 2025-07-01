@@ -9,6 +9,12 @@
     "preview": "vite preview",
     "test": "vitest run"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "eslint . --fix && prettier --check .",
+      "pre-push": "npm test"
+    }
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -20,7 +26,9 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",
+    "husky": "^9.1.7",
     "jsdom": "^20.0.0",
+    "prettier": "^3.6.2",
     "vite": "^3.0.7",
     "vitest": "^0.22.1"
   }
