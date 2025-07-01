@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "Running ESLint..."
+npx eslint . --fix
+
+echo "Running Prettier..."
+npx prettier --check .
+
+if [ $? -ne 0 ]; then
+  echo -e "\033[0;31m"
+  echo "Pre-commit checks failed for CC. Please fix errors before committing."
+  echo -e "\033[0;32m"
+  echo "Run 'npx prettier --write .' to format your code."
+  exit 1
+fi
+
+echo "All checks passed. Proceeding with commit."
+exit 0

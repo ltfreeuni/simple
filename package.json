@@ -5,9 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prepare": "husky",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "vitest run"
+    "test": "vitest run",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "lint": "eslint ."
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -20,8 +24,16 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",
+    "eslint": "^9.30.0",
+    "husky": "^9.1.7",
     "jsdom": "^20.0.0",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2",
     "vite": "^3.0.7",
     "vitest": "^0.22.1"
+  },
+  "lint-staged": {
+    "*.jsx": "eslint --cache --fix",
+    "*.{jsx,css,md}": "prettier --check"
   }
 }
