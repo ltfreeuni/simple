@@ -10,11 +10,11 @@
     "test": "vitest run",
     "format": "prettier --check ."
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "eslint . --fix && prettier --check .",
-      "pre-push": "npm test"
-    }
+  "lint-staged": {
+    "*": [
+      "prettier check . --ignore-unknown",
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "react": "^18.2.0",
